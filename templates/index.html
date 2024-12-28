@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Inspirations</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Anime Inspirations</h1>
+        <p>Find the best quotes from your favorite anime heroes!</p>
+    </header>
+    <main>
+        <div class="quotes-grid">
+            {% for quote in quotes %}
+            <div class="quote-card">
+                <img src="{{ quote.image }}" alt="{{ quote.name }}">
+                <h3>{{ quote.name }}</h3>
+                <p>{{ quote.quote }}</p>
+                <a href="/quote/{{ loop.index0 }}">Read More</a>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>
